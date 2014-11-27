@@ -11,7 +11,7 @@ var uncss = require('gulp-uncss');
 
 //server connect
 gulp.task('connect', function() {
-	connect.server({
+    connect.server({
 		root: 'client',
 		livereload: true
 	});
@@ -21,31 +21,31 @@ gulp.task('connect', function() {
 gulp.task('css', function () {
 	//gulp.src('./client/css/*.css')
 	gulp.src('./client/css/style.scss')
-			.pipe(sass())
-			//.pipe(concatCss("styles/bundle.css"))
-			.pipe(autoprefixer({
-				browsers: ['last 2 versions'],
-				cascade: false
-			}))
-			.pipe(minifyCSS({keepBreaks:true}))
-			.pipe(rename("styles/bundle.min.css"))
-			.pipe(gulp.dest('./static'))
-			.pipe(notify('Done!'));
-			//.pipe(connect.reload());
+        .pipe(sass())
+        //.pipe(concatCss("styles/bundle.css"))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(minifyCSS({keepBreaks:true}))
+        .pipe(rename("styles/bundle.min.css"))
+        .pipe(gulp.dest('./static'))
+        .pipe(notify('Done!'));
+        //.pipe(connect.reload());
 });
 
 gulp.task('uncss', function() {
 	return gulp.src('./bower_components/bootstrap/dist/css/bootstrap.min.css')
-			.pipe(uncss({
-				html: ['./client/views/index.html']
-			}))
-			.pipe(gulp.dest('./static/styles/uncssbundle.min.css'));
+        .pipe(uncss({
+            html: ['./client/views/index.html']
+        }))
+        .pipe(gulp.dest('./static/styles/uncssbundle.min.css'));
 });
 
 //html
 gulp.task('html', function(){
 	gulp.src('./client/views/*.html')
-			.pipe(connect.reload());
+        .pipe(connect.reload());
 });
 
 //watch

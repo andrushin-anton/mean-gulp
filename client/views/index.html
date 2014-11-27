@@ -6,23 +6,24 @@
 	<link href="/static/styles/bundle.min.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-	<!-- Meetups view -->
-	<div ng-controller="meetupController">
-		<h1>There are {{meetups.length}} meetups</h1>
-		<ul class="meetups">
-			<li ng-repeat="meetup in meetups">
-				{{meetup.name}}
-			</li>
-		</ul>
-		<form ng-submit="createMeetup()">
-			<input type="text" placeholder="Meetup name" ng-model="meetupName">
-			<button type="submit">Add</button>
-		</form>
-	</div>
+    <!-- Meetups view -->
+    <div ng-controller="meetupController">
+        <h1>There are {{meetups.length}} meetups</h1>
+        <ul class="meetups">
+            <li ng-repeat="meetup in meetups">
+                {{meetup.name}}
+            </li>
+        </ul>
+        <form ng-submit="createMeetup()">
+            <input type="text" placeholder="Meetup name" ng-model="meetupName">
+            <button type="submit">Add</button>
+        </form>
+    </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular-resource.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers/meetupController.js"></script>
+
 </body>
 </html>
